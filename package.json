@@ -20,7 +20,8 @@
     "cordis.patch.yml",
     "locale/*.json",
     "icon.svg",
-    "README.md"
+    "README.md",
+    "README.ru.md"
   ],
   "dsh": {
     "bundle": {

@@ -1,3 +1,5 @@
+[English](README.md) · [Русский](README.ru.md)
+
 # dsh-github-cli
 
 A DSH plugin that reads and reviews GitHub repositories through the **authenticated
