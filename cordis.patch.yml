@@ -1,0 +1,6 @@
+# dsh-github-cli bundle patch: inserts the Host row that registers the
+# github_* tools. The plugin needs no dependencies of its own; it runs the
+# user's installed `gh` binary and inherits that login.
+- insert:
+    - id: github-cli
+      name: dsh-github-cli

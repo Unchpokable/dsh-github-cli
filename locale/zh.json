@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "GitHub CLI",
+    "description": "通过已登录的 GitHub CLI 读取仓库、分支和拉取请求，并发布代码评审、创建 issue 与拉取请求。"
+  }
+}
