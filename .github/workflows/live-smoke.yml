@@ -1,0 +1,40 @@
+name: Live smoke
+
+on:
+  workflow_dispatch:
+    inputs:
+      test_account:
+        description: GitHub login the token belongs to
+        required: false
+        default: untodesu
+      test_repo:
+        description: Repository used for PR/issue validation
+        required: false
+        default: untodesu/dsh-github-cli
+
+permissions:
+  contents: read
+
+jobs:
+  smoke:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 11
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      - name: Check gh login
+        env:
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}
+        run: gh auth status
+      - name: Read-only smoke
+        env:
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}
+          DSH_GITHUB_TEST_ACCOUNT: ${{ inputs.test_account }}
+          DSH_GITHUB_TEST_REPO: ${{ inputs.test_repo }}
+        run: pnpm test:smoke

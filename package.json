@@ -1,9 +1,9 @@
 {
   "name": "dsh-github-cli",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "private": true,
   "type": "module",
-  "description": "Read repositories, branches, and pull requests, and post pull request reviews, issues, and pull requests through the authenticated GitHub CLI (gh) instead of the anonymous rate-limited API.",
+  "description": "Read and manage GitHub repositories, files, branches, pull requests, and issues through the authenticated GitHub CLI (gh), with local git support for clones, checkouts, and repository extraction.",
   "license": "BSD-2-Clause",
   "exports": {
     ".": "./index.js",
@@ -17,11 +17,14 @@
     "pr.js",
     "review.js",
     "issue.js",
+    "lib/",
+    "docs/",
     "cordis.patch.yml",
     "locale/*.json",
     "icon.svg",
     "README.md",
-    "README.ru.md"
+    "README.ru.md",
+    "CHANGELOG.md"
   ],
   "dsh": {
     "bundle": {
@@ -30,5 +33,13 @@
   },
   "engines": {
     "node": ">=20"
+  },
+  "scripts": {
+    "test": "node --test --test-isolation=none \"test/unit/*.test.mjs\"",
+    "test:smoke": "node test/smoke.mjs"
+  },
+  "dependencies": {
+    "@deepseek-ai/cosmokit": "~1.8.6",
+    "@deepseek-ai/schemastery": "^3.18.5"
   }
 }

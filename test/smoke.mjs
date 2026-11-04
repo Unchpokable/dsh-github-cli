@@ -16,11 +16,13 @@ import { describeIssue, prepareIssue } from '../issue.js';
 
 const config = {
   ghPath: '',
-  defaultRepo: 'untodesu/dsh-github-cli',
+  defaultRepo: process.env.DSH_GITHUB_TEST_REPO ?? 'untodesu/dsh-github-cli',
   maxOutputChars: 80_000,
   timeoutMs: 60_000,
   requireApproval: true,
 };
+
+const expectedAccount = process.env.DSH_GITHUB_TEST_ACCOUNT ?? 'untodesu';
 
 const results = [];
 
@@ -55,7 +57,7 @@ await test('github_status reports the signed-in account', async () => {
   const value = await readStatus(config);
   assert(value.found === true, 'gh not found');
   assert(value.authenticated === true, 'not authenticated');
-  assert(value.account === 'untodesu', `unexpected account ${value.account}`);
+  assert(value.account === expectedAccount, `unexpected account ${value.account}`);
   assert(value.rate_limit && value.rate_limit.limit === 5000, 'missing rate limit');
   console.log(`      ${renderStatus(value).split('\n').slice(0, 3).join(' | ')}`);
 });
