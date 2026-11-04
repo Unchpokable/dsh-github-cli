@@ -10,7 +10,7 @@
 import { readStatus, renderStatus } from '../index.js';
 import { resolveGh } from '../gh.js';
 import { readRepository, renderRead } from '../read.js';
-import { readDiff, readPull, renderDiff, renderPull, preparePullRequest } from '../pr.js';
+import { readDiff, readPull, renderDiff, renderPull, preparePullRequest, parseCoAuthors } from '../pr.js';
 import { loadReviewTarget, prepareReview, previewReview, renderReview } from '../review.js';
 import { describeIssue, prepareIssue } from '../issue.js';
 
@@ -314,6 +314,13 @@ await test('github_pr renders inline comment ranges', async () => {
   };
   const rendered = renderPull(value);
   assert(rendered.includes('file.md:10-11'), 'comment range not rendered');
+});
+
+await test('github_pr parses Co-authored-by trailers', async () => {
+  const names = parseCoAuthors('Subject\n\nBody.\n\nCo-Authored-By: DSH Agent <dsh-agent@users.noreply.github.com>\nCo-authored-by: Second Person <two@example.com>');
+  assert(names.length === 2, `expected two co-authors, got ${names.length}`);
+  assert(names[0] === 'DSH Agent' && names[1] === 'Second Person', `unexpected names ${names.join(', ')}`);
+  assert(parseCoAuthors('no trailers here').length === 0, 'trailer parse produced a false positive');
 });
 
 const failed = results.filter((result) => !result.ok);

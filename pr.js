@@ -146,12 +146,30 @@ async function listComments(config, repo, number, maxComments, signal) {
   };
 }
 
+/**
+ * Names from `Co-authored-by:` trailers in a commit message.
+ *
+ * @param {string} message - full commit message.
+ * @returns {string[]} distinct co-author names, in trailer order.
+ */
+export function parseCoAuthors(message) {
+  const names = [];
+  for (const line of String(message ?? '').split(/\r?\n/)) {
+    const match = /^\s*co-authored-by:\s*(.+?)\s*<[^<>\n]*>\s*$/i.exec(line);
+    if (match === null) continue;
+    const name = match[1].trim();
+    if (name.length > 0 && !names.includes(name)) names.push(name);
+  }
+  return names;
+}
+
 async function listCommits(config, repo, number, signal) {
   const { items } = await apiList(config, `repos/${repo}/pulls/${number}/commits`, { maxPages: 1, signal });
   const projected = items.slice(0, MAX_COMMITS).map((entry) => ({
     sha: shortSha(entry.sha),
     message: firstLine(entry.commit?.message ?? ''),
     author: entry.author?.login ?? entry.commit?.author?.name ?? null,
+    co_authors: parseCoAuthors(entry.commit?.message ?? ''),
     date: entry.commit?.author?.date ?? null,
   }));
   return {
@@ -313,7 +331,10 @@ export function renderPull(value) {
     lines.push('', `## Commits (${value.commits.total}${suffix})`);
     if (value.commits.items.length === 0) lines.push('(no commits)');
     for (const commit of value.commits.items) {
-      lines.push(` ${commit.sha} ${commit.message}${commit.author ? ` (@${commit.author})` : ''}`);
+      const coAuthors = Array.isArray(commit.co_authors) && commit.co_authors.length > 0
+        ? ` · co-author ${commit.co_authors.join(', ')}`
+        : '';
+      lines.push(` ${commit.sha} ${commit.message}${commit.author ? ` (@${commit.author})` : ''}${coAuthors}`);
     }
     if (value.commits.truncated) lines.push(`(showing the first ${value.commits.items.length} commits)`);
   }
