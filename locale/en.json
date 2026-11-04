@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "GitHub CLI",
+    "description": "Read repositories, branches, and pull requests, and post reviews, issues, and pull requests through the authenticated GitHub CLI."
+  }
+}

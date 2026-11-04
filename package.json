@@ -1,0 +1,33 @@
+{
+  "name": "dsh-github-cli",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Read repositories, branches, and pull requests, and post pull request reviews, issues, and pull requests through the authenticated GitHub CLI (gh) instead of the anonymous rate-limited API.",
+  "license": "BSD-2-Clause",
+  "exports": {
+    ".": "./index.js",
+    "./locale/*.json": "./locale/*.json",
+    "./icon": "./icon.svg"
+  },
+  "files": [
+    "index.js",
+    "gh.js",
+    "read.js",
+    "pr.js",
+    "review.js",
+    "issue.js",
+    "cordis.patch.yml",
+    "locale/*.json",
+    "icon.svg",
+    "README.md"
+  ],
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    }
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
