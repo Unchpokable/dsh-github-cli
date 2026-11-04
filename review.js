@@ -196,6 +196,7 @@ export function previewReview(prepared, target, reason = '') {
       line: comment.line,
       side: comment.side,
       start_line: comment.start_line ?? null,
+      start_side: comment.start_side ?? null,
       body: comment.body,
     })),
     reason,
@@ -226,7 +227,8 @@ export function describeReview(prepared, target) {
   }
   for (const [index, comment] of prepared.comments.slice(0, 5).entries()) {
     const body = comment.body.length > 180 ? `${comment.body.slice(0, 180)}[...]` : comment.body;
-    lines.push('', `Inline ${index + 1}: ${comment.path}:${comment.line} (${comment.side})`, body);
+    const side = comment.start_side ? `${comment.start_side}→${comment.side}` : comment.side;
+    lines.push('', `Inline ${index + 1}: ${comment.path}:${comment.line} (${side})`, body);
   }
   if (prepared.comments.length > 5) lines.push('', `... and ${prepared.comments.length - 5} more inline comments`);
   return lines.join('\n');
@@ -250,7 +252,8 @@ export function renderReview(value) {
       lines.push('', 'Inline comments:');
       for (const comment of value.comments) {
         const range = comment.start_line !== null ? `${comment.start_line}-${comment.line}` : `${comment.line}`;
-        lines.push(`- ${comment.path}:${range} (${comment.side})`);
+        const side = comment.start_side ? `${comment.start_side}→${comment.side}` : comment.side;
+        lines.push(`- ${comment.path}:${range} (${side})`);
         lines.push(`  ${comment.body.split('\n')[0]}`);
       }
     }

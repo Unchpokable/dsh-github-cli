@@ -24,22 +24,10 @@ const DEFAULTS = {
   requireApproval: true,
 };
 
-/** Optional schema import: config stays usable if the host package is absent. */
-let z;
-try {
-  z = (await import('@deepseek-ai/schemastery')).default;
-} catch {
-  z = undefined;
-}
-
-export const Config = z?.object({
-  ghPath: z.string().default(''),
-  defaultRepo: z.string().default(''),
-  maxOutputChars: z.number().default(DEFAULTS.maxOutputChars),
-  timeoutMs: z.number().default(DEFAULTS.timeoutMs),
-  requireApproval: z.boolean().default(DEFAULTS.requireApproval),
-});
-
+/**
+ * Validate and default the row's config. The plugin exports no `Config`
+ * schema because it is dependency-free; this is the only validation.
+ */
 function resolveConfig(raw) {
   const source = raw !== null && typeof raw === 'object' && !Array.isArray(raw) ? raw : {};
   const config = { ...DEFAULTS, ...source };
@@ -370,6 +358,11 @@ export function apply(ctx, config) {
               start_line: {
                 type: 'integer',
                 description: 'First line of a multi-line comment range.',
+              },
+              start_side: {
+                type: 'string',
+                enum: ['RIGHT', 'LEFT'],
+                description: 'Side of the diff for start_line; defaults to side. Set it when the range starts on the other side.',
               },
               body: {
                 type: 'string',

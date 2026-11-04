@@ -35,12 +35,23 @@ be stale; the standard-location fallback covers that case. Otherwise set
 
 ## Install
 
-Install the directory as a bundle in the current profile — through the Plugin
-Manager, or from a shell:
+The package is a normal pnpm dependency, so a GitHub ref or a local checkout both
+work. In Desktop, use the Plugin Manager; from a shell:
 
 ```sh
+# from GitHub (append #<branch-or-commit> to pin a revision)
+dsh plugin --profile <profile> add github:untodesu/dsh-github-cli
+
+# from a local checkout
 dsh plugin --profile <profile> add C:\path\to\dsh-github-cli
 ```
+
+`github:` is pnpm's GitHub shorthand, not a DSH-specific scheme: `dsh plugin`
+forwards the arguments to pnpm, and the Plugin Manager's install path checks the
+repository with `git ls-remote` before running `pnpm add`. A Git dependency is
+versioned by the ref you name (or the default branch), so pin a tag, a commit,
+or the branch that carries the plugin when the default branch does not have it
+yet.
 
 The bundle patch inserts one row, `github-cli`. It has no dependencies and no
 build step.
@@ -67,6 +78,10 @@ Override the row in a profile patch layer (the row id is `github-cli`):
 ```
 
 `config` is replaced wholesale, so restate every key you want to keep.
+
+The plugin validates these keys in `resolveConfig` and fails activation with a
+clear error on an invalid value. It exports no `Config` schema, so DSH does not
+generate a settings form for the row; edit the keys in the patch layer above.
 
 ## Examples
 

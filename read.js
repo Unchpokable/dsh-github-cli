@@ -388,13 +388,22 @@ export async function readRepository(config, args, signal) {
     files: [],
     omitted: [],
     truncated: false,
+    entries_truncated: false,
     notes: [],
   };
 
   for (const record of records) {
-    value.entries.push(...record.entries);
     value.notes.push(...record.notes);
-    if (record.truncated) value.truncated = true;
+    if (record.truncated) value.entries_truncated = true;
+    for (const entry of record.entries) {
+      const cost = entryLine(entry).length + 1;
+      if (value.entries.length >= MAX_TREE_ENTRIES || cost > budget.remaining) {
+        value.entries_truncated = true;
+        break;
+      }
+      budget.remaining -= cost;
+      value.entries.push(entry);
+    }
     for (const file of record.files) {
       const fitted = fitToBudget(file, budget);
       if (fitted === null) {
@@ -407,12 +416,15 @@ export async function readRepository(config, args, signal) {
     value.omitted.push(...record.omitted);
   }
 
-  if (value.entries.length > MAX_TREE_ENTRIES) {
-    value.entries = value.entries.slice(0, MAX_TREE_ENTRIES);
-    value.truncated = true;
-  }
+  if (value.entries_truncated) value.truncated = true;
 
   return value;
+}
+
+/** Render one directory or tree entry exactly as the model sees it. */
+function entryLine(entry) {
+  const size = entry.size === null ? '' : `  (${formatBytes(entry.size)})`;
+  return `  ${String(entry.type).padEnd(9)} ${entry.path}${size}`;
 }
 
 /**
@@ -429,10 +441,9 @@ export function renderRead(value) {
     const label = value.recursive ? 'recursive tree' : 'directory';
     parts.push(`${header} · ${value.target} · ${label}, ${value.entries.length} entries`);
     for (const entry of value.entries) {
-      const size = entry.size === null ? '' : `  (${formatBytes(entry.size)})`;
-      parts.push(`  ${entry.type.padEnd(9)} ${entry.path}${size}`);
+      parts.push(entryLine(entry));
     }
-    if (value.truncated) parts.push('(entry list truncated; narrow the path or drop recursive.)');
+    if (value.entries_truncated) parts.push('(entry list truncated; narrow the path or drop recursive.)');
   }
 
   for (const file of value.files) {

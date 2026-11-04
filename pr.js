@@ -11,6 +11,7 @@ const MAX_COMMENTS_CHARS = 40_000;
 const MAX_FILES = 300;
 const MAX_COMMITS = 50;
 const MAX_CHECKS = 50;
+const MAX_CHECK_PAGES = 2;
 const INCLUDES = new Set(['description', 'files', 'comments', 'commits', 'checks']);
 
 /** Clip text to a character bound without breaking surrogate pairs. */
@@ -131,13 +132,15 @@ async function listComments(config, repo, number, maxComments, signal) {
 
   const output = [];
   let budget = MAX_COMMENTS_CHARS;
-  for (const item of kept) {
+  for (let index = kept.length - 1; index >= 0; index -= 1) {
+    const item = kept[index];
     const body = clip(item.body, MAX_COMMENT_CHARS);
     const cost = body.text.length + 120;
     if (cost > budget) continue;
     budget -= cost;
     output.push({ ...item, body: body.text, body_truncated: body.truncated });
   }
+  output.reverse();
 
   return {
     items: output,
@@ -179,17 +182,41 @@ async function listCommits(config, repo, number, signal) {
   };
 }
 
+function countChecks(runs) {
+  const counts = { passed: 0, failed: 0, pending: 0, skipped: 0 };
+  for (const run of runs) counts[checkBucket(run)] += 1;
+  return counts;
+}
+
 async function listChecks(config, repo, sha, signal) {
-  const data = await apiJson(config, `repos/${repo}/commits/${sha}/check-runs?per_page=100`, { signal });
-  const runs = (data?.check_runs ?? []).map((run) => ({
-    name: run.name ?? 'unnamed check',
-    status: run.status ?? 'unknown',
-    conclusion: run.conclusion ?? null,
-  }));
+  const runs = [];
+  let total = 0;
+  let complete = false;
+
+  for (let page = 1; page <= MAX_CHECK_PAGES; page += 1) {
+    const data = await apiJson(config, `repos/${repo}/commits/${sha}/check-runs?per_page=100&page=${page}`, { signal });
+    const pageRuns = Array.isArray(data?.check_runs) ? data.check_runs : [];
+    if (Number.isFinite(data?.total_count)) total = data.total_count;
+    for (const run of pageRuns) {
+      runs.push({
+        name: run.name ?? 'unnamed check',
+        status: run.status ?? 'unknown',
+        conclusion: run.conclusion ?? null,
+      });
+    }
+    if (pageRuns.length < 100 || (total > 0 && runs.length >= total)) {
+      complete = true;
+      break;
+    }
+  }
+
+  const resolvedTotal = total > 0 ? total : runs.length;
   return {
     runs: runs.slice(0, MAX_CHECKS),
-    total: Number.isFinite(data?.total_count) ? data.total_count : runs.length,
-    truncated: runs.length > MAX_CHECKS,
+    total: resolvedTotal,
+    counted: runs.length,
+    counts: countChecks(runs),
+    truncated: !complete || resolvedTotal > runs.length || runs.length > MAX_CHECKS,
   };
 }
 
@@ -340,8 +367,7 @@ export function renderPull(value) {
   }
 
   if (value.checks !== null) {
-    const counts = { passed: 0, failed: 0, pending: 0, skipped: 0 };
-    for (const run of value.checks.runs) counts[checkBucket(run)] += 1;
+    const counts = value.checks.counts ?? countChecks(value.checks.runs);
     const summary = Object.entries(counts)
       .filter(([, count]) => count > 0)
       .map(([bucket, count]) => `${count} ${bucket}`)
@@ -358,7 +384,11 @@ export function renderPull(value) {
     if (visible.length < value.checks.runs.length) {
       lines.push(` (${value.checks.runs.length - visible.length} passing checks omitted)`);
     }
-    if (value.checks.truncated) lines.push(`(showing the first ${value.checks.runs.length} checks)`);
+    if (value.checks.truncated) {
+      const counted = Number.isInteger(value.checks.counted) ? value.checks.counted : value.checks.runs.length;
+      const scope = counted < value.checks.total ? `counts cover ${counted} of ${value.checks.total}; ` : '';
+      lines.push(`(${scope}showing ${value.checks.runs.length} of ${value.checks.total} checks)`);
+    }
   }
 
   if (value.notes.length > 0) {
