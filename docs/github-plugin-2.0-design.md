@@ -1334,7 +1334,7 @@ Confirm: Unchpokable/dsh-github-cli -> my-org
 - `lib/session.js` — cwd → repo binding, defaults, TTL cache, journal.
 - `lib/ops/registry.js` — `defineOperation`/`runOperation` pipeline with approval and plan.
 - `github_status` now reports capabilities and the cwd binding; `repo` is inferred from the binding when omitted.
-- `test/unit/*.test.mjs` — 74 tests; run with `pnpm test` (`--test-isolation=none`, so it works in the DSH sandbox).
+- `test/unit/*.test.mjs` — 74 tests; run with `pnpm test` (`--experimental-test-isolation=none`, so it works on Node.js 22 and in the DSH sandbox).
 - The live smoke test still requires a normal terminal; the DSH sandbox blocks piped child processes with `spawn EPERM`.
 
 ### 12.3 Phase 1 — частично реализовано

@@ -285,8 +285,11 @@ pnpm test
 ```
 
 They run without network and without spawning a child test process, so they also
-work from a confined DSH shell. `node --test --test-isolation=none
-"test/unit/*.test.mjs"` is the underlying command.
+work from a confined DSH shell. The underlying command is `node --test
+--experimental-test-isolation=none "test/unit/*.test.mjs"`. Unit tests need
+Node.js 22 or newer (for test-file globs and the isolation flag); the
+`experimental-` prefix is the Node.js 22 spelling, and Node.js 24+ accepts it as
+an alias of `--test-isolation`.
 
 The smoke test calls the real API through the signed-in account and only reads
 (plus a dry-run review):

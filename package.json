@@ -35,7 +35,7 @@
     "node": ">=20"
   },
   "scripts": {
-    "test": "node --test --test-isolation=none \"test/unit/*.test.mjs\"",
+    "test": "node --test --experimental-test-isolation=none \"test/unit/*.test.mjs\"",
     "test:smoke": "node test/smoke.mjs"
   },
   "dependencies": {

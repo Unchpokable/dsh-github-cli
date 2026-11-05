@@ -290,7 +290,10 @@ pnpm test
 
 Они не ходят в сеть и не запускают дочерний тестовый процесс, поэтому работают и
 из ограниченной оболочки DSH. Внутри используется
-`node --test --test-isolation=none "test/unit/*.test.mjs"`.
+`node --test --experimental-test-isolation=none "test/unit/*.test.mjs"`.
+Unit-тесты требуют Node.js 22 или новее (нужны glob-шаблоны и флаг изоляции);
+`experimental-` — это вариант имени для Node.js 22, а Node.js 24+ принимает его
+как алиас `--test-isolation`.
 
 Smoke-тест обращается к реальному API через авторизованный аккаунт и только
 читает (плюс пробное ревью в режиме dry-run):
