@@ -303,3 +303,7 @@ For CI, `.github/workflows/ci.yml` runs the unit suite on every push/PR, and the
 manual `Live smoke` workflow runs this read-only smoke against a `GH_TOKEN`
 secret. Set `DSH_GITHUB_TEST_ACCOUNT`/`DSH_GITHUB_TEST_REPO` there if the token
 does not belong to the default account.
+
+Both workflows use Node.js 22 and pnpm 11.28.10: pnpm 11 requires Node.js 22.13 or
+newer (it imports `node:sqlite`), while the plugin itself still runs on Node.js
+20 or newer.

@@ -308,3 +308,7 @@ pnpm test:smoke
 workflow `Live smoke` запускает этот read-only smoke с секретом `GH_TOKEN`.
 Если токен принадлежит другому аккаунту, задайте `DSH_GITHUB_TEST_ACCOUNT` и
 `DSH_GITHUB_TEST_REPO`.
+
+Оба workflow используют Node.js 22 и pnpm 11.28.10: pnpm 11 требует Node.js 22.13
+или новее (он импортирует `node:sqlite`), а сам плагин по-прежнему работает на
+Node.js 20 или новее.

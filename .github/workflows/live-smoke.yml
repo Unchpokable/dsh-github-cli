@@ -22,10 +22,11 @@ jobs:
       - uses: actions/checkout@v4
       - uses: pnpm/action-setup@v4
         with:
-          version: 11
+          # pnpm 11 needs Node.js >= 22.13 (it imports node:sqlite).
+          version: 11.28.10
       - uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: 22
           cache: pnpm
       - run: pnpm install --frozen-lockfile
       - name: Check gh login
