@@ -66,7 +66,7 @@ DSH-плагин, который читает репозитории и пише
 
 ```sh
 # с GitHub (добавьте #<ветка-или-коммит>, чтобы закрепить ревизию)
-dsh plugin --profile <profile> add github:untodesu/dsh-github-cli
+dsh plugin --profile <profile> add github:extreme-russian-dsh-fandom/dsh-github-cli
 
 # из локального каталога
 dsh plugin --profile <profile> add C:\path\to\dsh-github-cli
@@ -119,8 +119,8 @@ dsh plugin --profile <profile> add C:\path\to\dsh-github-cli
 ```yaml
 - id: github-cli
   config:
-    defaultRepo: untodesu/dsh-github-cli
-    defaultOrg: untodesu
+    defaultRepo: extreme-russian-dsh-fandom/dsh-github-cli
+    defaultOrg: extreme-russian-dsh-fandom
     maxOutputChars: 60000
     allowDestructive: false
 ```
@@ -166,7 +166,7 @@ dsh plugin --profile <profile> add C:\path\to\dsh-github-cli
 
 ```json
 {
-  "repo": "untodesu/dsh-github-cli",
+  "repo": "extreme-russian-dsh-fandom/dsh-github-cli",
   "title": "Add review support",
   "head": "feature/review",
   "body": "Adds the review flow."
@@ -177,7 +177,7 @@ dsh plugin --profile <profile> add C:\path\to\dsh-github-cli
 
 ```json
 {
-  "repo": "untodesu/dsh-github-cli",
+  "repo": "extreme-russian-dsh-fandom/dsh-github-cli",
   "title": "Review writes need a test pull request",
   "body": "We should exercise the review endpoint end to end.",
   "labels": ["testing"],
