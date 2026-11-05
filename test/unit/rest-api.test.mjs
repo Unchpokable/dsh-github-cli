@@ -51,3 +51,56 @@ test('apiList pages until a short page', async () => {
   assert.equal(result.pages, 2);
   assert.equal(calls, 2);
 });
+
+test('apiRequest retries a transient 503 on GET', async () => {
+  let calls = 0;
+  const fake = async () => {
+    calls += 1;
+    if (calls === 1) {
+      return {
+        code: 1,
+        stdout: included(503, '{"message":"Service Unavailable"}', { 'Retry-After': '0' }),
+        stderr: '',
+      };
+    }
+    return { code: 0, stdout: included(200, '{"ok":true}'), stderr: '' };
+  };
+  const response = await apiRequest(config, 'repos/owner/repo', { ghRun: fake });
+  assert.equal(response.status, 200);
+  assert.equal(calls, 2);
+});
+
+test('apiRequest does not retry a 503 on POST', async () => {
+  let calls = 0;
+  const fake = async () => {
+    calls += 1;
+    return {
+      code: 1,
+      stdout: included(503, '{"message":"Service Unavailable"}', { 'Retry-After': '0' }),
+      stderr: '',
+    };
+  };
+  await assert.rejects(
+    apiRequest(config, 'repos/owner/repo', { method: 'POST', ghRun: fake }),
+    (error) => error.status === 503 && error.code === 'network',
+  );
+  assert.equal(calls, 1);
+});
+
+test('apiRequest retries a 429 rate limit', async () => {
+  let calls = 0;
+  const fake = async () => {
+    calls += 1;
+    if (calls === 1) {
+      return {
+        code: 1,
+        stdout: included(429, '{"message":"rate limited"}', { 'Retry-After': '0' }),
+        stderr: '',
+      };
+    }
+    return { code: 0, stdout: included(200, '{"ok":true}'), stderr: '' };
+  };
+  const response = await apiRequest(config, 'repos/owner/repo', { ghRun: fake });
+  assert.equal(response.status, 200);
+  assert.equal(calls, 2);
+});

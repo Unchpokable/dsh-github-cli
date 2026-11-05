@@ -77,3 +77,71 @@ test('github_release delete requires a destructive plan', async () => {
   assert.equal(value.applied, false);
   assert.equal(value.plan.confirm, 'owner/repo:v2');
 });
+
+test('github_release view resolves a tag through the tags endpoint', async () => {
+  const { session } = fakeSession();
+  const calls = [];
+  const gh = fakeGh((endpoint) => {
+    calls.push(endpoint);
+    if (endpoint === 'repos/owner/repo/releases/tags/v1') {
+      return { id: 7, tag_name: 'v1', name: 'v1', html_url: 'https://example.test/v1', assets: [] };
+    }
+    throw new Error(`unexpected ${endpoint}`);
+  });
+  const value = await runOperation(getOperation('github_release', 'view'), {
+    action: 'view', repo: 'owner/repo', tag: 'v1',
+  }, {
+    config: resolveConfig({}),
+    session,
+    exec: { toolName: 'github_release' },
+    gh,
+  });
+  assert.equal(value.data.release.id, 7);
+  assert.deepEqual(calls, ['repos/owner/repo/releases/tags/v1']);
+});
+
+test('github_release edit resolves a tag to its numeric id', async () => {
+  const { session, approvals } = fakeSession();
+  const calls = [];
+  const gh = fakeGh((endpoint, options) => {
+    calls.push({ endpoint, method: options.method ?? 'GET' });
+    if (endpoint === 'repos/owner/repo/releases/tags/v1') return { id: 7, tag_name: 'v1' };
+    if (endpoint === 'repos/owner/repo/releases/7' && options.method === 'PATCH') {
+      return { id: 7, tag_name: 'v1', name: 'edited', body: 'new body', html_url: 'https://example.test/v1' };
+    }
+    throw new Error(`unexpected ${options.method ?? 'GET'} ${endpoint}`);
+  });
+  const value = await runOperation(getOperation('github_release', 'edit'), {
+    action: 'edit', repo: 'owner/repo', tag: 'v1', name: 'edited', body: 'new body',
+  }, {
+    config: resolveConfig({}),
+    session,
+    exec: { toolName: 'github_release', agent: { session: 'test' } },
+    gh,
+  });
+  assert.equal(value.applied, true);
+  assert.equal(value.data.release.name, 'edited');
+  assert.equal(approvals.length, 1);
+  assert.ok(calls.some((call) => call.endpoint === 'repos/owner/repo/releases/7' && call.method === 'PATCH'));
+});
+
+test('github_release delete applies by tag through the numeric id', async () => {
+  const { session } = fakeSession();
+  const calls = [];
+  const gh = fakeGh((endpoint, options) => {
+    calls.push({ endpoint, method: options.method ?? 'GET' });
+    if (endpoint === 'repos/owner/repo/releases/tags/v2') return { id: 8, tag_name: 'v2' };
+    if (endpoint === 'repos/owner/repo/releases/8' && options.method === 'DELETE') return null;
+    throw new Error(`unexpected ${options.method ?? 'GET'} ${endpoint}`);
+  });
+  const value = await runOperation(getOperation('github_release', 'delete'), {
+    action: 'delete', repo: 'owner/repo', tag: 'v2', apply: true, confirm: 'owner/repo:v2',
+  }, {
+    config: resolveConfig({ allowDestructive: true }),
+    session,
+    exec: { toolName: 'github_release', agent: { session: 'test' } },
+    gh,
+  });
+  assert.equal(value.applied, true);
+  assert.ok(calls.some((call) => call.endpoint === 'repos/owner/repo/releases/8' && call.method === 'DELETE'));
+});

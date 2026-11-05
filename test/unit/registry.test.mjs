@@ -68,6 +68,40 @@ test('runOperation applies a read operation without approval', async () => {
   assert.equal(records[0].operation, 'test.read');
 });
 
+test('runOperation initializes the session before prepare', async () => {
+  clearOperations();
+  const events = [];
+  const operation = defineOperation({
+    tool: 'github_test',
+    action: 'init',
+    risk: 'read',
+    prepare() {
+      events.push('prepare');
+      return {};
+    },
+    async apply() {
+      events.push('apply');
+      return { summary: 'ok' };
+    },
+  });
+  const session = {
+    ctx: { get: () => undefined },
+    async init(exec) {
+      events.push(`init:${exec.toolName}`);
+    },
+    record(entry) {
+      return { ...entry, id: 'op_test' };
+    },
+  };
+  const value = await runOperation(operation, {}, {
+    config: resolveConfig({}),
+    session,
+    exec: { toolName: 'github_test' },
+  });
+  assert.equal(value.applied, true);
+  assert.deepEqual(events, ['init:github_test', 'prepare', 'apply']);
+});
+
 test('runOperation asks for approval before a write', async () => {
   clearOperations();
   const operation = readOperation({

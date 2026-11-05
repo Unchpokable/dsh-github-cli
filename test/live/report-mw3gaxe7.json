@@ -1,0 +1,1460 @@
+{
+  "run": "mw3gaxe7",
+  "startedAt": "2026-11-05T11:17:07.087Z",
+  "finishedAt": "2026-11-05T11:22:28.381Z",
+  "target": "Unchpokable/clanker-playground",
+  "scratchRepository": "Unchpokable/clanker-plugin-e2e-mw3gaxe7",
+  "environment": {
+    "node": "v26.1.0",
+    "platform": "win32",
+    "cwd": "C:\\Users\\Unchp\\source\\repos\\dsh-github-cli\\.dsh\\e2e-mw3gaxe7",
+    "account": "Unchpokable",
+    "rateLimit": {
+      "limit": 5000,
+      "used": 135,
+      "remaining": 4865,
+      "reset_at": "2026-11-05T11:41:12.000Z"
+    }
+  },
+  "summary": {
+    "total": 149,
+    "passed": 145,
+    "failed": 0,
+    "warned": 4,
+    "skipped": 0,
+    "fatal": null
+  },
+  "evidence": {
+    "account": "Unchpokable",
+    "rateLimit": {
+      "limit": 5000,
+      "used": 135,
+      "remaining": 4865,
+      "reset_at": "2026-11-05T11:41:12.000Z"
+    },
+    "scratchRepo": "https://github.com/Unchpokable/clanker-plugin-e2e-mw3gaxe7",
+    "pr": "https://github.com/Unchpokable/clanker-playground/pull/21",
+    "review": "https://github.com/Unchpokable/clanker-playground/pull/21#pullrequestreview-5784026032",
+    "issue": "https://github.com/Unchpokable/clanker-playground/issues/23",
+    "workflowRun": "https://github.com/Unchpokable/clanker-playground/actions/runs/42018082824",
+    "release": "https://github.com/Unchpokable/clanker-playground/releases/tag/v0.0.1-e2e-mw3gaxe7",
+    "extractRepo": "https://github.com/Unchpokable/clanker-extract-mw3gaxe7",
+    "linkPr": "https://github.com/Unchpokable/clanker-playground/pull/26"
+  },
+  "approvals": [
+    {
+      "toolName": "github_repo",
+      "callId": "e2e-2",
+      "reason": "GitHub remote write: Create Unchpokable/clanker-plugin-e2e-mw3gaxe7 (public)\n\nRisk: write\n\nEffects:\n- Create repository Unchpokable/clanker-plugin-e2e-mw3gaxe7",
+      "at": "2026-11-05T11:17:10.063Z"
+    },
+    {
+      "toolName": "github_repo",
+      "callId": "e2e-5",
+      "reason": "GitHub remote write: Edit Unchpokable/clanker-plugin-e2e-mw3gaxe7\n\nRisk: write\n\nEffects:\n- set description",
+      "at": "2026-11-05T11:17:17.511Z"
+    },
+    {
+      "toolName": "github_repo",
+      "callId": "e2e-7",
+      "reason": "GitHub remote write: repo.topics\n\nRisk: write",
+      "at": "2026-11-05T11:17:20.218Z"
+    },
+    {
+      "toolName": "github_repo",
+      "callId": "e2e-9",
+      "reason": "GitHub remote write: repo.access_add\n\nRisk: write",
+      "at": "2026-11-05T11:17:21.538Z"
+    },
+    {
+      "toolName": "github_repo",
+      "callId": "e2e-10",
+      "reason": "GitHub remote write: repo.archive\n\nRisk: write",
+      "at": "2026-11-05T11:17:22.107Z"
+    },
+    {
+      "toolName": "github_repo",
+      "callId": "e2e-11",
+      "reason": "GitHub remote write: repo.unarchive\n\nRisk: write",
+      "at": "2026-11-05T11:17:22.934Z"
+    },
+    {
+      "toolName": "github_repo",
+      "callId": "e2e-12",
+      "reason": "GitHub destructive write: Rename Unchpokable/clanker-plugin-e2e-mw3gaxe7 to clanker-plugin-e2e-mw3gaxe7-renamed\n\nRisk: destructive\n\nEffects:\n- Rename the repository to clanker-plugin-e2e-mw3gaxe7-renamed",
+      "at": "2026-11-05T11:17:23.705Z"
+    },
+    {
+      "toolName": "github_repo",
+      "callId": "e2e-13",
+      "reason": "GitHub destructive write: Rename Unchpokable/clanker-plugin-e2e-mw3gaxe7-renamed to clanker-plugin-e2e-mw3gaxe7\n\nRisk: destructive\n\nEffects:\n- Rename the repository to clanker-plugin-e2e-mw3gaxe7",
+      "at": "2026-11-05T11:17:25.252Z"
+    },
+    {
+      "toolName": "github_repo",
+      "callId": "e2e-14",
+      "reason": "GitHub destructive write: Rename Unchpokable/clanker-plugin-e2e-mw3gaxe7-renamed to clanker-plugin-e2e-mw3gaxe7\n\nRisk: destructive\n\nEffects:\n- Rename the repository to clanker-plugin-e2e-mw3gaxe7",
+      "at": "2026-11-05T11:17:31.059Z"
+    },
+    {
+      "toolName": "github_repo",
+      "callId": "e2e-21",
+      "reason": "GitHub remote write: Edit Unchpokable/clanker-playground\n\nRisk: write\n\nEffects:\n- set has_issues",
+      "at": "2026-11-05T11:17:37.005Z"
+    },
+    {
+      "toolName": "github_ref",
+      "callId": "e2e-22",
+      "reason": "GitHub remote write: Create branch e2e/work-mw3gaxe7 at 2e1c5b9\n\nRisk: write\n\nEffects:\n- Add refs/heads/e2e/work-mw3gaxe7",
+      "at": "2026-11-05T11:17:38.644Z"
+    },
+    {
+      "toolName": "github_file",
+      "callId": "e2e-25",
+      "reason": "GitHub remote write: Create docs/plugin-e2e.md on e2e/work-mw3gaxe7\n\nRisk: write\n\nEffects:\n- Add docs/plugin-e2e.md",
+      "at": "2026-11-05T11:17:41.380Z"
+    },
+    {
+      "toolName": "github_file",
+      "callId": "e2e-26",
+      "reason": "GitHub remote write: Copied docs/plugin-e2e.md to docs/plugin-e2e-copy.md on e2e/work-mw3gaxe7\n\nRisk: write\n\nEffects:\n- Copy docs/plugin-e2e.md -> docs/plugin-e2e-copy.md",
+      "at": "2026-11-05T11:17:44.966Z"
+    },
+    {
+      "toolName": "github_file",
+      "callId": "e2e-27",
+      "reason": "GitHub remote write: Moved docs/plugin-e2e-copy.md to docs/plugin-e2e-moved.md on e2e/work-mw3gaxe7\n\nRisk: write\n\nEffects:\n- Move docs/plugin-e2e-copy.md -> docs/plugin-e2e-moved.md",
+      "at": "2026-11-05T11:17:49.617Z"
+    },
+    {
+      "toolName": "github_file",
+      "callId": "e2e-28",
+      "reason": "GitHub remote write: Create docs/plugin-e2e-delete.md on e2e/work-mw3gaxe7\n\nRisk: write\n\nEffects:\n- Add docs/plugin-e2e-delete.md",
+      "at": "2026-11-05T11:17:52.785Z"
+    },
+    {
+      "toolName": "github_file",
+      "callId": "e2e-29",
+      "reason": "GitHub remote write: Delete docs/plugin-e2e-delete.md on e2e/work-mw3gaxe7\n\nRisk: write\n\nEffects:\n- Remove docs/plugin-e2e-delete.md",
+      "at": "2026-11-05T11:17:54.591Z"
+    },
+    {
+      "toolName": "github_file",
+      "callId": "e2e-30",
+      "reason": "GitHub remote write: Commit 2 changes to e2e/work-mw3gaxe7\n\nRisk: write\n\nEffects:\n- write docs/plugin-e2e-commit-a.md",
+      "at": "2026-11-05T11:17:58.884Z"
+    },
+    {
+      "toolName": "github_file",
+      "callId": "e2e-32",
+      "reason": "GitHub remote write: Create docs/plugin-e2e-forbidden.md on main\n\nRisk: write\n\nEffects:\n- Add docs/plugin-e2e-forbidden.md",
+      "at": "2026-11-05T11:18:03.973Z"
+    },
+    {
+      "toolName": "github_pr_create",
+      "callId": "e2e-34",
+      "reason": "Open a pull request on GitHub.\n\nRepository: Unchpokable/clanker-playground\nBase: main ← head: e2e/work-mw3gaxe7\nDraft: yes\nTitle: [plugin e2e] mw3gaxe7",
+      "at": "2026-11-05T11:18:05.187Z"
+    },
+    {
+      "toolName": "github_pr",
+      "callId": "e2e-41",
+      "reason": "GitHub remote write: pr.update\n\nRisk: write",
+      "at": "2026-11-05T11:18:14.760Z"
+    },
+    {
+      "toolName": "github_pr",
+      "callId": "e2e-42",
+      "reason": "GitHub remote write: pr.comment\n\nRisk: write",
+      "at": "2026-11-05T11:18:16.124Z"
+    },
+    {
+      "toolName": "github_pr",
+      "callId": "e2e-43",
+      "reason": "GitHub remote write: pr.label\n\nRisk: write",
+      "at": "2026-11-05T11:18:17.157Z"
+    },
+    {
+      "toolName": "github_pr",
+      "callId": "e2e-44",
+      "reason": "GitHub remote write: pr.label\n\nRisk: write",
+      "at": "2026-11-05T11:18:18.256Z"
+    },
+    {
+      "toolName": "github_pr",
+      "callId": "e2e-45",
+      "reason": "GitHub remote write: pr.label\n\nRisk: write",
+      "at": "2026-11-05T11:18:19.653Z"
+    },
+    {
+      "toolName": "github_pr",
+      "callId": "e2e-46",
+      "reason": "GitHub remote write: pr.reviewers\n\nRisk: write",
+      "at": "2026-11-05T11:18:20.696Z"
+    },
+    {
+      "toolName": "github_pr",
+      "callId": "e2e-47",
+      "reason": "GitHub remote write: pr.ready\n\nRisk: write",
+      "at": "2026-11-05T11:18:22.217Z"
+    },
+    {
+      "toolName": "github_pr",
+      "callId": "e2e-48",
+      "reason": "GitHub remote write: pr.draft\n\nRisk: write",
+      "at": "2026-11-05T11:18:24.064Z"
+    },
+    {
+      "toolName": "github_pr",
+      "callId": "e2e-49",
+      "reason": "GitHub remote write: pr.ready\n\nRisk: write",
+      "at": "2026-11-05T11:18:25.906Z"
+    },
+    {
+      "toolName": "github_file",
+      "callId": "e2e-50",
+      "reason": "GitHub remote write: Create docs/plugin-e2e-main-advance.md on main\n\nRisk: write\n\nEffects:\n- Add docs/plugin-e2e-main-advance.md",
+      "at": "2026-11-05T11:18:27.538Z"
+    },
+    {
+      "toolName": "github_pr",
+      "callId": "e2e-52",
+      "reason": "GitHub remote write: pr.update_branch\n\nRisk: write",
+      "at": "2026-11-05T11:18:31.174Z"
+    },
+    {
+      "toolName": "github_review",
+      "callId": "e2e-56",
+      "reason": "Submit a pull request review on GitHub.\n\nRepository: Unchpokable/clanker-playground\nPull request: #21 — [plugin e2e] mw3gaxe7 updated\nVerdict: COMMENT\nCommit: a47fe65",
+      "at": "2026-11-05T11:18:40.496Z"
+    },
+    {
+      "toolName": "github_pr",
+      "callId": "e2e-59",
+      "reason": "GitHub destructive write: Merge Unchpokable/clanker-playground#21 (squash)\n\nRisk: destructive\n\nEffects:\n- Merge head a47fe65 into main",
+      "at": "2026-11-05T11:18:46.066Z"
+    },
+    {
+      "toolName": "github_ref",
+      "callId": "e2e-61",
+      "reason": "GitHub remote write: Create branch e2e/close-mw3gaxe7 at 46fa05b\n\nRisk: write\n\nEffects:\n- Add refs/heads/e2e/close-mw3gaxe7",
+      "at": "2026-11-05T11:18:52.841Z"
+    },
+    {
+      "toolName": "github_file",
+      "callId": "e2e-62",
+      "reason": "GitHub remote write: Create docs/plugin-e2e-close.md on e2e/close-mw3gaxe7\n\nRisk: write\n\nEffects:\n- Add docs/plugin-e2e-close.md",
+      "at": "2026-11-05T11:18:54.561Z"
+    },
+    {
+      "toolName": "github_pr_create",
+      "callId": "e2e-63",
+      "reason": "Open a pull request on GitHub.\n\nRepository: Unchpokable/clanker-playground\nBase: main ← head: e2e/close-mw3gaxe7\nDraft: no\nTitle: [plugin e2e] close/reopen mw3gaxe7",
+      "at": "2026-11-05T11:18:55.734Z"
+    },
+    {
+      "toolName": "github_pr",
+      "callId": "e2e-64",
+      "reason": "GitHub remote write: pr.close\n\nRisk: write",
+      "at": "2026-11-05T11:18:57.291Z"
+    },
+    {
+      "toolName": "github_pr",
+      "callId": "e2e-65",
+      "reason": "GitHub remote write: pr.reopen\n\nRisk: write",
+      "at": "2026-11-05T11:18:59.020Z"
+    },
+    {
+      "toolName": "github_pr",
+      "callId": "e2e-66",
+      "reason": "GitHub remote write: pr.close\n\nRisk: write",
+      "at": "2026-11-05T11:19:00.475Z"
+    },
+    {
+      "toolName": "github_ref",
+      "callId": "e2e-67",
+      "reason": "GitHub destructive write: Delete branch e2e/close-mw3gaxe7 in Unchpokable/clanker-playground\n\nRisk: destructive\n\nEffects:\n- Remove refs/heads/e2e/close-mw3gaxe7",
+      "at": "2026-11-05T11:19:03.205Z"
+    },
+    {
+      "toolName": "github_api",
+      "callId": "e2e-69",
+      "reason": "GitHub remote write: POST repos/Unchpokable/clanker-playground/labels\n\nRisk: write\n\nEffects:\n- POST request against the GitHub API",
+      "at": "2026-11-05T11:19:05.351Z"
+    },
+    {
+      "toolName": "github_api",
+      "callId": "e2e-70",
+      "reason": "GitHub remote write: POST repos/Unchpokable/clanker-playground/milestones\n\nRisk: write\n\nEffects:\n- POST request against the GitHub API",
+      "at": "2026-11-05T11:19:06.042Z"
+    },
+    {
+      "toolName": "github_issue",
+      "callId": "e2e-72",
+      "reason": "GitHub remote write: issue.create\n\nRisk: write",
+      "at": "2026-11-05T11:19:07.219Z"
+    },
+    {
+      "toolName": "github_issue_create",
+      "callId": "e2e-73",
+      "reason": "Open an issue on GitHub.\n\nRepository: Unchpokable/clanker-playground\nTitle: [plugin e2e] alias issue mw3gaxe7\n\nBody:",
+      "at": "2026-11-05T11:19:08.758Z"
+    },
+    {
+      "toolName": "github_issue",
+      "callId": "e2e-74",
+      "reason": "GitHub remote write: issue.close\n\nRisk: write",
+      "at": "2026-11-05T11:19:09.568Z"
+    },
+    {
+      "toolName": "github_issue",
+      "callId": "e2e-78",
+      "reason": "GitHub remote write: issue.update\n\nRisk: write",
+      "at": "2026-11-05T11:19:14.888Z"
+    },
+    {
+      "toolName": "github_issue",
+      "callId": "e2e-79",
+      "reason": "GitHub remote write: issue.comment\n\nRisk: write",
+      "at": "2026-11-05T11:19:16.100Z"
+    },
+    {
+      "toolName": "github_issue",
+      "callId": "e2e-80",
+      "reason": "GitHub remote write: issue.label\n\nRisk: write",
+      "at": "2026-11-05T11:19:17.056Z"
+    },
+    {
+      "toolName": "github_issue",
+      "callId": "e2e-81",
+      "reason": "GitHub remote write: issue.label\n\nRisk: write",
+      "at": "2026-11-05T11:19:18.704Z"
+    },
+    {
+      "toolName": "github_issue",
+      "callId": "e2e-82",
+      "reason": "GitHub remote write: issue.label\n\nRisk: write",
+      "at": "2026-11-05T11:19:19.969Z"
+    },
+    {
+      "toolName": "github_issue",
+      "callId": "e2e-83",
+      "reason": "GitHub remote write: issue.assign\n\nRisk: write",
+      "at": "2026-11-05T11:19:21.126Z"
+    },
+    {
+      "toolName": "github_issue",
+      "callId": "e2e-84",
+      "reason": "GitHub remote write: issue.assign\n\nRisk: write",
+      "at": "2026-11-05T11:19:22.145Z"
+    },
+    {
+      "toolName": "github_issue",
+      "callId": "e2e-85",
+      "reason": "GitHub remote write: issue.milestone\n\nRisk: write",
+      "at": "2026-11-05T11:19:23.488Z"
+    },
+    {
+      "toolName": "github_issue",
+      "callId": "e2e-86",
+      "reason": "GitHub remote write: issue.milestone\n\nRisk: write",
+      "at": "2026-11-05T11:19:24.716Z"
+    },
+    {
+      "toolName": "github_issue",
+      "callId": "e2e-87",
+      "reason": "GitHub remote write: issue.lock\n\nRisk: write",
+      "at": "2026-11-05T11:19:25.852Z"
+    },
+    {
+      "toolName": "github_issue",
+      "callId": "e2e-88",
+      "reason": "GitHub remote write: issue.unlock\n\nRisk: write",
+      "at": "2026-11-05T11:19:26.724Z"
+    },
+    {
+      "toolName": "github_issue",
+      "callId": "e2e-89",
+      "reason": "GitHub remote write: issue.close\n\nRisk: write",
+      "at": "2026-11-05T11:19:27.635Z"
+    },
+    {
+      "toolName": "github_issue",
+      "callId": "e2e-90",
+      "reason": "GitHub remote write: issue.reopen\n\nRisk: write",
+      "at": "2026-11-05T11:19:28.884Z"
+    },
+    {
+      "toolName": "github_issue",
+      "callId": "e2e-91",
+      "reason": "GitHub remote write: Transfer Unchpokable/clanker-playground#23 to Unchpokable/clanker-plugin-e2e-mw3gaxe7\n\nRisk: write\n\nEffects:\n- Move the issue to Unchpokable/clanker-plugin-e2e-mw3gaxe7",
+      "at": "2026-11-05T11:19:30.644Z"
+    },
+    {
+      "toolName": "github_issue",
+      "callId": "e2e-92",
+      "reason": "GitHub remote write: Transfer Unchpokable/clanker-plugin-e2e-mw3gaxe7#1 to Unchpokable/clanker-playground\n\nRisk: write\n\nEffects:\n- Move the issue to Unchpokable/clanker-playground",
+      "at": "2026-11-05T11:19:33.053Z"
+    },
+    {
+      "toolName": "github_issue",
+      "callId": "e2e-93",
+      "reason": "GitHub remote write: issue.close\n\nRisk: write",
+      "at": "2026-11-05T11:19:34.758Z"
+    },
+    {
+      "toolName": "github_file",
+      "callId": "e2e-94",
+      "reason": "GitHub remote write: Create .github/workflows/plugin-e2e.yml on main\n\nRisk: write\n\nEffects:\n- Add .github/workflows/plugin-e2e.yml",
+      "at": "2026-11-05T11:19:37.217Z"
+    },
+    {
+      "toolName": "github_actions",
+      "callId": "e2e-99",
+      "reason": "GitHub admin/security write: Set secret PLUGIN_E2E_SECRET on Unchpokable/clanker-playground\n\nRisk: admin\n\nEffects:\n- Create or replace secret PLUGIN_E2E_SECRET",
+      "at": "2026-11-05T11:19:40.906Z"
+    },
+    {
+      "toolName": "github_actions",
+      "callId": "e2e-101",
+      "reason": "GitHub admin/security write: Delete secret PLUGIN_E2E_SECRET from Unchpokable/clanker-playground\n\nRisk: admin\n\nEffects:\n- Remove secret PLUGIN_E2E_SECRET",
+      "at": "2026-11-05T11:19:42.313Z"
+    },
+    {
+      "toolName": "github_actions",
+      "callId": "e2e-102",
+      "reason": "GitHub remote write: actions.variables_set\n\nRisk: write",
+      "at": "2026-11-05T11:19:42.859Z"
+    },
+    {
+      "toolName": "github_actions",
+      "callId": "e2e-104",
+      "reason": "GitHub remote write: actions.variables_delete\n\nRisk: write",
+      "at": "2026-11-05T11:19:44.450Z"
+    },
+    {
+      "toolName": "github_actions",
+      "callId": "e2e-105",
+      "reason": "GitHub admin/security write: actions.permissions_set\n\nRisk: admin",
+      "at": "2026-11-05T11:19:45.010Z"
+    },
+    {
+      "toolName": "github_actions",
+      "callId": "e2e-106",
+      "reason": "GitHub remote write: Dispatch plugin-e2e.yml on main\n\nRisk: write\n\nEffects:\n- Trigger workflow plugin-e2e.yml",
+      "at": "2026-11-05T11:19:45.620Z"
+    },
+    {
+      "toolName": "github_actions",
+      "callId": "e2e-115",
+      "reason": "GitHub remote write: actions.caches_delete\n\nRisk: write",
+      "at": "2026-11-05T11:20:11.638Z"
+    },
+    {
+      "toolName": "github_actions",
+      "callId": "e2e-116",
+      "reason": "GitHub remote write: actions.rerun\n\nRisk: write",
+      "at": "2026-11-05T11:20:12.265Z"
+    },
+    {
+      "toolName": "github_actions",
+      "callId": "e2e-117",
+      "reason": "GitHub remote write: actions.cancel\n\nRisk: write",
+      "at": "2026-11-05T11:20:17.606Z"
+    },
+    {
+      "toolName": "github_actions",
+      "callId": "e2e-118",
+      "reason": "GitHub remote write: actions.rerun_failed\n\nRisk: write",
+      "at": "2026-11-05T11:20:18.670Z"
+    },
+    {
+      "toolName": "github_ref",
+      "callId": "e2e-119",
+      "reason": "GitHub remote write: Create tag v0.0.1-e2e-mw3gaxe7 at f7bbee7\n\nRisk: write\n\nEffects:\n- Add refs/tags/v0.0.1-e2e-mw3gaxe7",
+      "at": "2026-11-05T11:20:19.748Z"
+    },
+    {
+      "toolName": "github_release",
+      "callId": "e2e-121",
+      "reason": "GitHub remote write: release.create\n\nRisk: write",
+      "at": "2026-11-05T11:20:21.308Z"
+    },
+    {
+      "toolName": "github_release",
+      "callId": "e2e-123",
+      "reason": "GitHub remote write: release.upload\n\nRisk: write",
+      "at": "2026-11-05T11:20:22.825Z"
+    },
+    {
+      "toolName": "github_release",
+      "callId": "e2e-126",
+      "reason": "GitHub remote write: release.edit\n\nRisk: write",
+      "at": "2026-11-05T11:20:25.846Z"
+    },
+    {
+      "toolName": "github_release",
+      "callId": "e2e-128",
+      "reason": "GitHub destructive write: Delete release v0.0.1-e2e-mw3gaxe7 from Unchpokable/clanker-playground\n\nRisk: destructive\n\nEffects:\n- Delete release v0.0.1-e2e-mw3gaxe7",
+      "at": "2026-11-05T11:20:29.405Z"
+    },
+    {
+      "toolName": "github_api",
+      "callId": "e2e-129",
+      "reason": "GitHub admin/security write: DELETE repos/Unchpokable/clanker-playground/git/refs/tags/v0.0.1-e2e-mw3gaxe7\n\nRisk: admin\n\nEffects:\n- DELETE request against the GitHub API",
+      "at": "2026-11-05T11:20:31.051Z"
+    },
+    {
+      "toolName": "github_file",
+      "callId": "e2e-130",
+      "reason": "GitHub remote write: Commit 2 changes to main\n\nRisk: write\n\nEffects:\n- write extract-me/a.txt",
+      "at": "2026-11-05T11:20:33.998Z"
+    },
+    {
+      "toolName": "github_extract",
+      "callId": "e2e-132",
+      "reason": "GitHub destructive write: Extract extract-me from Unchpokable/clanker-playground into Unchpokable/clanker-extract-mw3gaxe7 (snapshot)\n\nRisk: destructive\nRepository: Unchpokable/clanker-extract-mw3gaxe7\n\nEffects:",
+      "at": "2026-11-05T11:20:44.539Z"
+    },
+    {
+      "toolName": "github_file",
+      "callId": "e2e-135",
+      "reason": "GitHub remote write: Create link-me/c.txt on main\n\nRisk: write\n\nEffects:\n- Add link-me/c.txt",
+      "at": "2026-11-05T11:21:07.406Z"
+    },
+    {
+      "toolName": "github_extract",
+      "callId": "e2e-137",
+      "reason": "GitHub destructive write: Link Unchpokable/clanker-extract-mw3gaxe7 as a submodule at link-me in Unchpokable/clanker-playground\n\nRisk: destructive\nRepository: Unchpokable/clanker-playground\n\nEffects:",
+      "at": "2026-11-05T11:21:17.498Z"
+    },
+    {
+      "toolName": "github_pr",
+      "callId": "e2e-139",
+      "reason": "GitHub remote write: pr.close\n\nRisk: write",
+      "at": "2026-11-05T11:21:24.264Z"
+    },
+    {
+      "toolName": "github_ref",
+      "callId": "e2e-140",
+      "reason": "GitHub destructive write: Delete branch dsh/link-link-me in Unchpokable/clanker-playground\n\nRisk: destructive\n\nEffects:\n- Remove refs/heads/dsh/link-link-me",
+      "at": "2026-11-05T11:21:26.956Z"
+    },
+    {
+      "toolName": "github_api",
+      "callId": "e2e-163",
+      "reason": "GitHub admin/security write: DELETE repos/Unchpokable/clanker-playground/labels/plugin-e2e-mw3gaxe7\n\nRisk: admin\n\nEffects:\n- DELETE request against the GitHub API",
+      "at": "2026-11-05T11:21:54.593Z"
+    }
+  ],
+  "checks": [
+    {
+      "name": "tool registration",
+      "status": "pass",
+      "ms": 0,
+      "detail": "18 tools"
+    },
+    {
+      "name": "github_status",
+      "status": "pass",
+      "ms": 1315,
+      "detail": "{\"found\":true,\"path\":\"gh\",\"version\":\"2.94.0\",\"source\":\"PATH\",\"authenticated\":true,\"host\":\"github.com\",\"account\":\"Unchpokable\",\"scopes\":[\"gis"
+    },
+    {
+      "name": "status reports authentication and capabilities",
+      "status": "pass",
+      "ms": 0,
+      "detail": "Unchpokable, gh 2.94.0"
+    },
+    {
+      "name": "github_repo create (scratch, auto_init, topics)",
+      "status": "pass",
+      "ms": 7464,
+      "detail": "Created Unchpokable/clanker-plugin-e2e-mw3gaxe7"
+    },
+    {
+      "name": "github_repo view (scratch)",
+      "status": "pass",
+      "ms": 561,
+      "detail": "Repository Unchpokable/clanker-plugin-e2e-mw3gaxe7"
+    },
+    {
+      "name": "github_repo list (owner)",
+      "status": "pass",
+      "ms": 1077,
+      "detail": "33 repositories"
+    },
+    {
+      "name": "github_repo edit metadata and topics",
+      "status": "pass",
+      "ms": 2707,
+      "detail": "Updated Unchpokable/clanker-plugin-e2e-mw3gaxe7"
+    },
+    {
+      "name": "github_repo topics",
+      "status": "pass",
+      "ms": 809,
+      "detail": "Set 2 topics on Unchpokable/clanker-plugin-e2e-mw3gaxe7"
+    },
+    {
+      "name": "github_repo access_list",
+      "status": "pass",
+      "ms": 511,
+      "detail": "1 collaborators"
+    },
+    {
+      "name": "github_repo access_add self (expected API limitation)",
+      "status": "warn",
+      "ms": 569,
+      "error": "GitHub rejected api PUT repos/Unchpokable/clanker-plugin-e2e-mw3gaxe7/collaborators/Unchpokable: {\"message\":\"Validation Failed\",\"errors\":[{\"resource\":\"Repository\",\"code\":\"custom\",\"message\":\"Repository owner cannot be a collaborator\"}],\"documentation_url\":\"https://docs.github.com/rest/reference/repos#add-a-repository-collaborator\",\"status\":\"422\"}. The resource changed or the request is not valid in its current state.",
+      "code": "conflict",
+      "details": "{\"message\":\"Validation Failed\",\"errors\":[{\"resource\":\"Repository\",\"code\":\"custom\",\"message\":\"Repository owner cannot be a collaborator\"}],\"documentation_url\":\"https://docs.github.com/rest/reference/repos#add-a-repository-collaborator\",\"status\":\"422\"}"
+    },
+    {
+      "name": "github_repo archive",
+      "status": "pass",
+      "ms": 827,
+      "detail": "Archived Unchpokable/clanker-plugin-e2e-mw3gaxe7"
+    },
+    {
+      "name": "github_repo unarchive",
+      "status": "pass",
+      "ms": 770,
+      "detail": "Unarchived Unchpokable/clanker-plugin-e2e-mw3gaxe7"
+    },
+    {
+      "name": "github_repo rename",
+      "status": "pass",
+      "ms": 1548,
+      "detail": "Renamed Unchpokable/clanker-plugin-e2e-mw3gaxe7 to Unchpokable/clanker-plugin-e2e-mw3gaxe7-renamed"
+    },
+    {
+      "name": "github_repo rename back",
+      "status": "pass",
+      "ms": 7051,
+      "detail": "Renamed Unchpokable/clanker-plugin-e2e-mw3gaxe7-renamed to Unchpokable/clanker-plugin-e2e-mw3gaxe7"
+    },
+    {
+      "name": "github_read root listing",
+      "status": "pass",
+      "ms": 525,
+      "detail": "6 entries"
+    },
+    {
+      "name": "github_read file with line range",
+      "status": "pass",
+      "ms": 530,
+      "detail": "4 lines of 13"
+    },
+    {
+      "name": "github_read multiple paths",
+      "status": "pass",
+      "ms": 512,
+      "detail": "2 files"
+    },
+    {
+      "name": "github_read recursive tree",
+      "status": "pass",
+      "ms": 1866,
+      "detail": "6 entries"
+    },
+    {
+      "name": "github_file read",
+      "status": "pass",
+      "ms": 636,
+      "detail": "3 lines"
+    },
+    {
+      "name": "github_file stat file",
+      "status": "pass",
+      "ms": 633,
+      "detail": "50681 bytes"
+    },
+    {
+      "name": "github_repo edit enable issues on target",
+      "status": "pass",
+      "ms": 1109,
+      "detail": "Updated Unchpokable/clanker-playground"
+    },
+    {
+      "name": "github_ref create branch",
+      "status": "pass",
+      "ms": 1438,
+      "detail": "e2e/work-mw3gaxe7"
+    },
+    {
+      "name": "github_ref view branch",
+      "status": "pass",
+      "ms": 563,
+      "detail": "2e1c5b91e97ad117daffa76673031a9387341597"
+    },
+    {
+      "name": "github_ref list branches",
+      "status": "pass",
+      "ms": 686,
+      "detail": "2 branches"
+    },
+    {
+      "name": "github_file write on branch",
+      "status": "pass",
+      "ms": 1783,
+      "detail": "2bd9dfdeb0ca52a24d7eabff432dd7b4b796cc11"
+    },
+    {
+      "name": "github_file copy",
+      "status": "pass",
+      "ms": 4676,
+      "detail": "Committed 1 change to e2e/work-mw3gaxe7"
+    },
+    {
+      "name": "github_file move",
+      "status": "pass",
+      "ms": 5005,
+      "detail": "Committed 1 change to e2e/work-mw3gaxe7"
+    },
+    {
+      "name": "github_file write then delete",
+      "status": "pass",
+      "ms": 4368,
+      "detail": "Deleted docs/plugin-e2e-delete.md on e2e/work-mw3gaxe7"
+    },
+    {
+      "name": "github_file atomic commit",
+      "status": "pass",
+      "ms": 6113,
+      "detail": "505fc982af12fed7585774c9becc9adeb73bb646"
+    },
+    {
+      "name": "github_file stat directory",
+      "status": "pass",
+      "ms": 524,
+      "detail": "4 entries"
+    },
+    {
+      "name": "github_file write to protected branch without override",
+      "status": "pass",
+      "ms": 703,
+      "detail": "Direct writes to protected branch \"main\" are disabled."
+    },
+    {
+      "name": "github_file overwrite without sha is rejected",
+      "status": "pass",
+      "ms": 1214,
+      "detail": "\"PLUGIN_TEST.md\" already exists; pass its current sha to overwrite it."
+    },
+    {
+      "name": "github_pr_create (draft)",
+      "status": "pass",
+      "ms": 1569,
+      "detail": "#21"
+    },
+    {
+      "name": "github_pr view with all sections",
+      "status": "pass",
+      "ms": 1584,
+      "detail": "4 files, 6 commits"
+    },
+    {
+      "name": "github_pr list",
+      "status": "pass",
+      "ms": 634,
+      "detail": "1 open PRs"
+    },
+    {
+      "name": "github_diff PR paging and path filter",
+      "status": "pass",
+      "ms": 2492,
+      "detail": "4 files, 762 chars"
+    },
+    {
+      "name": "github_diff compare branches",
+      "status": "pass",
+      "ms": 704,
+      "detail": "1 file(s)"
+    },
+    {
+      "name": "github_read at PR head",
+      "status": "pass",
+      "ms": 2590,
+      "detail": "4 lines"
+    },
+    {
+      "name": "github_pr update title/body",
+      "status": "pass",
+      "ms": 1364,
+      "detail": "[plugin e2e] mw3gaxe7 updated"
+    },
+    {
+      "name": "github_pr comment",
+      "status": "pass",
+      "ms": 1033,
+      "detail": "https://github.com/Unchpokable/clanker-playground/pull/21#issuecomment-6656643430"
+    },
+    {
+      "name": "github_pr label add",
+      "status": "pass",
+      "ms": 1099,
+      "detail": "Updated labels on Unchpokable/clanker-playground#21"
+    },
+    {
+      "name": "github_pr label set and remove",
+      "status": "pass",
+      "ms": 2439,
+      "detail": "Updated labels on Unchpokable/clanker-playground#21"
+    },
+    {
+      "name": "github_pr reviewers self-request (expected limitation)",
+      "status": "warn",
+      "ms": 591,
+      "error": "GitHub rejected api POST repos/Unchpokable/clanker-playground/pulls/21/requested_reviewers: {\"message\":\"Review cannot be requested from pull request author.\",\"documentation_url\":\"https://docs.github.com/rest/pulls/review-requests#request-reviewers-for-a-pull-request\",\"status\":\"422\"}. The resource changed or the request is not valid in its current state.",
+      "code": "conflict",
+      "details": "{\"message\":\"Review cannot be requested from pull request author.\",\"documentation_url\":\"https://docs.github.com/rest/pulls/review-requests#request-reviewers-for-a-pull-request\",\"status\":\"422\"}"
+    },
+    {
+      "name": "github_pr ready",
+      "status": "pass",
+      "ms": 2044,
+      "detail": "Marked ready Unchpokable/clanker-playground#21"
+    },
+    {
+      "name": "github_pr draft",
+      "status": "pass",
+      "ms": 1794,
+      "detail": "Converted to draft Unchpokable/clanker-playground#21"
+    },
+    {
+      "name": "github_pr ready again",
+      "status": "pass",
+      "ms": 1890,
+      "detail": "Marked ready Unchpokable/clanker-playground#21"
+    },
+    {
+      "name": "advance main for update_branch",
+      "status": "pass",
+      "ms": 1857,
+      "detail": "8024a8fcf0108be59ae1612a7f4f69e5dc7cf2a5"
+    },
+    {
+      "name": "github_pr update_branch",
+      "status": "pass",
+      "ms": 10187,
+      "detail": "Updated branch for Unchpokable/clanker-playground#21"
+    },
+    {
+      "name": "github_review dry run",
+      "status": "pass",
+      "ms": 702,
+      "detail": "COMMENT on a47fe65"
+    },
+    {
+      "name": "github_review post with inline range",
+      "status": "pass",
+      "ms": 2134,
+      "detail": "review 5784026032"
+    },
+    {
+      "name": "github_pr view sees review and comment",
+      "status": "pass",
+      "ms": 1479,
+      "detail": "3 comment items"
+    },
+    {
+      "name": "github_pr merge (squash, delete branch)",
+      "status": "pass",
+      "ms": 7558,
+      "detail": "Merged Unchpokable/clanker-playground#21 (squash)"
+    },
+    {
+      "name": "github_pr view after merge",
+      "status": "pass",
+      "ms": 1322,
+      "detail": "CLOSED, merged=true"
+    },
+    {
+      "name": "github_ref create close/reopen branch",
+      "status": "pass",
+      "ms": 1792,
+      "detail": "e2e/close-mw3gaxe7"
+    },
+    {
+      "name": "github_file write close/reopen fixture",
+      "status": "pass",
+      "ms": 1687,
+      "detail": "166bca962244e295768a402686d637a1185403b6"
+    },
+    {
+      "name": "github_pr_create close/reopen",
+      "status": "pass",
+      "ms": 1558,
+      "detail": "#22"
+    },
+    {
+      "name": "github_pr close",
+      "status": "pass",
+      "ms": 1729,
+      "detail": "Closed Unchpokable/clanker-playground#22"
+    },
+    {
+      "name": "github_pr reopen",
+      "status": "pass",
+      "ms": 1454,
+      "detail": "Reopened Unchpokable/clanker-playground#22"
+    },
+    {
+      "name": "github_pr close again",
+      "status": "pass",
+      "ms": 1468,
+      "detail": "Closed Unchpokable/clanker-playground#22"
+    },
+    {
+      "name": "github_ref delete close/reopen branch",
+      "status": "pass",
+      "ms": 2015,
+      "detail": "Deleted branch e2e/close-mw3gaxe7 in Unchpokable/clanker-playground"
+    },
+    {
+      "name": "github_ref refuse deleting default branch",
+      "status": "pass",
+      "ms": 1393,
+      "detail": "Refusing to delete the default branch \"main\"."
+    },
+    {
+      "name": "github_api create label",
+      "status": "pass",
+      "ms": 691,
+      "detail": "plugin-e2e-mw3gaxe7"
+    },
+    {
+      "name": "github_api create milestone",
+      "status": "pass",
+      "ms": 663,
+      "detail": "5"
+    },
+    {
+      "name": "read milestone number",
+      "status": "pass",
+      "ms": 514,
+      "detail": "5"
+    },
+    {
+      "name": "github_issue create",
+      "status": "pass",
+      "ms": 1539,
+      "detail": "#23"
+    },
+    {
+      "name": "github_issue_create compatibility alias",
+      "status": "pass",
+      "ms": 2070,
+      "detail": "#24"
+    },
+    {
+      "name": "github_issue view",
+      "status": "pass",
+      "ms": 548,
+      "detail": "Unchpokable/clanker-playground#23 — [plugin e2e] issue mw3gaxe7"
+    },
+    {
+      "name": "github_issue list",
+      "status": "pass",
+      "ms": 3512,
+      "detail": "11 issues"
+    },
+    {
+      "name": "github_issue update",
+      "status": "pass",
+      "ms": 1212,
+      "detail": "[plugin e2e] issue mw3gaxe7 updated"
+    },
+    {
+      "name": "github_issue comment",
+      "status": "pass",
+      "ms": 956,
+      "detail": ""
+    },
+    {
+      "name": "github_issue label set/add/remove",
+      "status": "pass",
+      "ms": 4070,
+      "detail": "Updated labels on Unchpokable/clanker-playground#23"
+    },
+    {
+      "name": "github_issue assign remove/add",
+      "status": "pass",
+      "ms": 2361,
+      "detail": "Updated assignees on Unchpokable/clanker-playground#23"
+    },
+    {
+      "name": "github_issue milestone clear/set",
+      "status": "pass",
+      "ms": 2365,
+      "detail": "milestone 5"
+    },
+    {
+      "name": "github_issue lock",
+      "status": "pass",
+      "ms": 872,
+      "detail": "Locked Unchpokable/clanker-playground#23"
+    },
+    {
+      "name": "github_issue unlock",
+      "status": "pass",
+      "ms": 911,
+      "detail": "Unlocked Unchpokable/clanker-playground#23"
+    },
+    {
+      "name": "github_issue close",
+      "status": "pass",
+      "ms": 1248,
+      "detail": "Closed Unchpokable/clanker-playground#23"
+    },
+    {
+      "name": "github_issue reopen",
+      "status": "pass",
+      "ms": 1105,
+      "detail": "Reopened Unchpokable/clanker-playground#23"
+    },
+    {
+      "name": "github_issue transfer to scratch and back",
+      "status": "pass",
+      "ms": 4770,
+      "detail": "Transferred Unchpokable/clanker-plugin-e2e-mw3gaxe7#1 to Unchpokable/clanker-playground#25"
+    },
+    {
+      "name": "github_issue close after transfer",
+      "status": "pass",
+      "ms": 1965,
+      "detail": "Closed Unchpokable/clanker-playground#25"
+    },
+    {
+      "name": "github_file write workflow to main",
+      "status": "pass",
+      "ms": 1802,
+      "detail": "f7bbee7c45096cdec1479945b3e8e6399d845cb1"
+    },
+    {
+      "name": "github_actions workflows",
+      "status": "pass",
+      "ms": 615,
+      "detail": "1 workflows"
+    },
+    {
+      "name": "github_actions workflow view",
+      "status": "pass",
+      "ms": 532,
+      "detail": "plugin-e2e"
+    },
+    {
+      "name": "github_actions permissions_get",
+      "status": "pass",
+      "ms": 510,
+      "detail": "allowed_actions=all"
+    },
+    {
+      "name": "github_actions runners_list",
+      "status": "pass",
+      "ms": 723,
+      "detail": "0 repository runners"
+    },
+    {
+      "name": "github_actions secrets_set",
+      "status": "pass",
+      "ms": 865,
+      "detail": "Set secret PLUGIN_E2E_SECRET on Unchpokable/clanker-playground"
+    },
+    {
+      "name": "github_actions secrets_list",
+      "status": "pass",
+      "ms": 542,
+      "detail": "1 secrets"
+    },
+    {
+      "name": "github_actions secrets_delete",
+      "status": "pass",
+      "ms": 546,
+      "detail": "Deleted secret PLUGIN_E2E_SECRET from Unchpokable/clanker-playground"
+    },
+    {
+      "name": "github_actions variables_set",
+      "status": "pass",
+      "ms": 1088,
+      "detail": "Set variable PLUGIN_E2E_VARIABLE on Unchpokable/clanker-playground"
+    },
+    {
+      "name": "github_actions variables_list",
+      "status": "pass",
+      "ms": 503,
+      "detail": "1 variables"
+    },
+    {
+      "name": "github_actions variables_delete",
+      "status": "pass",
+      "ms": 560,
+      "detail": "Deleted variable PLUGIN_E2E_VARIABLE from Unchpokable/clanker-playground"
+    },
+    {
+      "name": "github_actions permissions_set",
+      "status": "pass",
+      "ms": 610,
+      "detail": "Updated Actions permissions for Unchpokable/clanker-playground"
+    },
+    {
+      "name": "github_actions dispatch",
+      "status": "pass",
+      "ms": 1893,
+      "detail": "Dispatched plugin-e2e.yml on main"
+    },
+    {
+      "name": "github_actions runs (wait for completion)",
+      "status": "pass",
+      "ms": 14214,
+      "detail": "{\"id\":42018082824,\"name\":\"plugin-e2e\",\"event\":\"workflow_dispatch\",\"status\":\"completed\",\"conclusion\":\"success\",\"branch\":\"main\",\"sha\":\"f7bbee7"
+    },
+    {
+      "name": "github_actions run view with jobs",
+      "status": "pass",
+      "ms": 1273,
+      "detail": "1 jobs"
+    },
+    {
+      "name": "github_actions logs",
+      "status": "pass",
+      "ms": 2390,
+      "detail": "87 lines"
+    },
+    {
+      "name": "github_actions artifacts",
+      "status": "pass",
+      "ms": 534,
+      "detail": "1 artifacts"
+    },
+    {
+      "name": "github_actions download_artifact",
+      "status": "pass",
+      "ms": 1884,
+      "detail": "C:\\Users\\Unchp\\source\\repos\\dsh-github-cli\\.dsh\\e2e-mw3gaxe7\\downloads\\artifact"
+    },
+    {
+      "name": "github_actions caches_list and delete",
+      "status": "pass",
+      "ms": 4457,
+      "detail": "plugin-e2e-42018082824"
+    },
+    {
+      "name": "github_actions rerun",
+      "status": "pass",
+      "ms": 5340,
+      "detail": "Requested a rerun of run 42018082824"
+    },
+    {
+      "name": "github_actions cancel (after rerun)",
+      "status": "pass",
+      "ms": 1063,
+      "detail": "Cancelled run 42018082824"
+    },
+    {
+      "name": "github_actions rerun_failed on a successful run (expected API rejection)",
+      "status": "warn",
+      "ms": 551,
+      "error": "GitHub denied api POST repos/Unchpokable/clanker-playground/actions/runs/42018082824/rerun-failed-jobs: {\"message\":\"This workflow is already running\",\"documentation_url\":\"https://docs.github.com/rest/actions/workflow-runs#re-run-failed-jobs-from-a-workflow-run\",\"status\":\"403\"}. The token or account lacks permission for this operation.",
+      "code": "permission",
+      "details": "{\"message\":\"This workflow is already running\",\"documentation_url\":\"https://docs.github.com/rest/actions/workflow-runs#re-run-failed-jobs-from-a-workflow-run\",\"status\":\"403\"}"
+    },
+    {
+      "name": "github_ref create tag",
+      "status": "pass",
+      "ms": 1321,
+      "detail": "v0.0.1-e2e-mw3gaxe7"
+    },
+    {
+      "name": "github_ref list tags",
+      "status": "pass",
+      "ms": 767,
+      "detail": "1 tags"
+    },
+    {
+      "name": "github_release create",
+      "status": "pass",
+      "ms": 987,
+      "detail": "{\"id\":435107943,\"tag_name\":\"v0.0.1-e2e-mw3gaxe7\",\"name\":\"Plugin E2E mw3gaxe7\",\"draft\":false,\"prerelease\":false,\"html_url\":\"https://github.co"
+    },
+    {
+      "name": "github_release view by numeric id",
+      "status": "pass",
+      "ms": 525,
+      "detail": "id 435107943"
+    },
+    {
+      "name": "github_release upload workspace file",
+      "status": "pass",
+      "ms": 1458,
+      "detail": "Uploaded C:\\Users\\Unchp\\source\\repos\\dsh-github-cli\\.dsh\\e2e-mw3gaxe7\\plugin-e2e-asset.txt to release v0.0.1-e2e-mw3gaxe7"
+    },
+    {
+      "name": "github_release view by tag",
+      "status": "pass",
+      "ms": 539,
+      "detail": "1 assets"
+    },
+    {
+      "name": "github_release list",
+      "status": "pass",
+      "ms": 1029,
+      "detail": "1 releases"
+    },
+    {
+      "name": "github_release edit by tag",
+      "status": "pass",
+      "ms": 1335,
+      "detail": "Updated release v0.0.1-e2e-mw3gaxe7"
+    },
+    {
+      "name": "github_release download",
+      "status": "pass",
+      "ms": 2223,
+      "detail": "C:\\Users\\Unchp\\source\\repos\\dsh-github-cli\\.dsh\\e2e-mw3gaxe7\\downloads\\release"
+    },
+    {
+      "name": "github_release delete by tag",
+      "status": "pass",
+      "ms": 1647,
+      "detail": "Deleted release v0.0.1-e2e-mw3gaxe7 from Unchpokable/clanker-playground"
+    },
+    {
+      "name": "github_api delete tag ref",
+      "status": "pass",
+      "ms": 832,
+      "detail": "tag deleted"
+    },
+    {
+      "name": "github_file atomic commit extract fixtures",
+      "status": "pass",
+      "ms": 6293,
+      "detail": "50b897faeaf5c0ebcedb8ebb906e5d68d59414b6"
+    },
+    {
+      "name": "github_extract plan (snapshot, create destination)",
+      "status": "pass",
+      "ms": 3389,
+      "detail": "Extract extract-me from Unchpokable/clanker-playground into Unchpokable/clanker-extract-mw3gaxe7 (snapshot)"
+    },
+    {
+      "name": "github_extract apply (snapshot, create destination)",
+      "status": "pass",
+      "ms": 23574,
+      "detail": "Extracted extract-me from Unchpokable/clanker-playground into Unchpokable/clanker-extract-mw3gaxe7"
+    },
+    {
+      "name": "verify extracted repository contents",
+      "status": "pass",
+      "ms": 1689,
+      "detail": "a.txt present"
+    },
+    {
+      "name": "github_file write link fixture",
+      "status": "pass",
+      "ms": 2431,
+      "detail": "9ff98986ccac2be7f91379ac584c608b886405e3"
+    },
+    {
+      "name": "github_extract link plan",
+      "status": "pass",
+      "ms": 4050,
+      "detail": "Link Unchpokable/clanker-extract-mw3gaxe7 as a submodule at link-me in Unchpokable/clanker-playground"
+    },
+    {
+      "name": "github_extract link apply",
+      "status": "pass",
+      "ms": 9479,
+      "detail": "Linked Unchpokable/clanker-extract-mw3gaxe7 at link-me on dsh/link-link-me"
+    },
+    {
+      "name": "github_pr view link PR",
+      "status": "pass",
+      "ms": 1476,
+      "detail": "[plugin e2e] link mw3gaxe7"
+    },
+    {
+      "name": "close link PR and delete branch",
+      "status": "pass",
+      "ms": 3702,
+      "detail": "closed"
+    },
+    {
+      "name": "github_extract plan multi-path (filter-repo strategy)",
+      "status": "pass",
+      "ms": 3779,
+      "detail": "filter-repo"
+    },
+    {
+      "name": "github_extract cleanup",
+      "status": "pass",
+      "ms": 0,
+      "detail": "C:\\Users\\Unchp\\source\\repos\\dsh-github-cli\\.dsh\\e2e-mw3gaxe7\\.dsh\\github\\extract"
+    },
+    {
+      "name": "github_extract status journal",
+      "status": "pass",
+      "ms": 1,
+      "detail": "3 entries"
+    },
+    {
+      "name": "github_workspace clone",
+      "status": "pass",
+      "ms": 4300,
+      "detail": "C:\\Users\\Unchp\\source\\repos\\dsh-github-cli\\.dsh\\e2e-mw3gaxe7\\checkout\\clanker"
+    },
+    {
+      "name": "github_workspace status",
+      "status": "pass",
+      "ms": 87,
+      "detail": "main, clean=true"
+    },
+    {
+      "name": "github_workspace status without path from a checkout",
+      "status": "pass",
+      "ms": 1216,
+      "detail": "C:\\Users\\Unchp\\source\\repos\\dsh-github-cli\\.dsh\\e2e-mw3gaxe7\\checkout\\clanker"
+    },
+    {
+      "name": "github_workspace list",
+      "status": "pass",
+      "ms": 1,
+      "detail": "2 bindings"
+    },
+    {
+      "name": "read main sha for worktree",
+      "status": "pass",
+      "ms": 625,
+      "detail": "9ff98986ccac2be7f91379ac584c608b886405e3"
+    },
+    {
+      "name": "github_workspace checkout main",
+      "status": "pass",
+      "ms": 3267,
+      "detail": "Checked out main in C:\\Users\\Unchp\\source\\repos\\dsh-github-cli\\.dsh\\e2e-mw3gaxe7\\checkout\\clanker"
+    },
+    {
+      "name": "github_workspace sync",
+      "status": "pass",
+      "ms": 6972,
+      "detail": "Synced C:\\Users\\Unchp\\source\\repos\\dsh-github-cli\\.dsh\\e2e-mw3gaxe7\\checkout\\clanker (--ff-only)"
+    },
+    {
+      "name": "github_workspace worktree from commit",
+      "status": "pass",
+      "ms": 234,
+      "detail": "C:\\Users\\Unchp\\source\\repos\\dsh-github-cli\\.dsh\\e2e-mw3gaxe7\\checkout\\clanker\\.dsh\\worktrees\\9ff98986ccac2be7f91379ac584c608b886405e3"
+    },
+    {
+      "name": "github_workspace bind and unbind",
+      "status": "pass",
+      "ms": 1,
+      "detail": "Unbound C:\\Users\\Unchp\\source\\repos\\dsh-github-cli\\.dsh\\e2e-mw3gaxe7\\manual"
+    },
+    {
+      "name": "github_search users",
+      "status": "pass",
+      "ms": 632,
+      "detail": "2 users"
+    },
+    {
+      "name": "github_search repositories (index may lag)",
+      "status": "pass",
+      "ms": 982,
+      "detail": "4 repositories"
+    },
+    {
+      "name": "github_search issues (index may lag)",
+      "status": "pass",
+      "ms": 1155,
+      "detail": "11 issues"
+    },
+    {
+      "name": "github_search code (index may lag)",
+      "status": "pass",
+      "ms": 863,
+      "detail": "0 code results"
+    },
+    {
+      "name": "github_org list",
+      "status": "pass",
+      "ms": 655,
+      "detail": "3 organizations"
+    },
+    {
+      "name": "github_org view user account (expected failure)",
+      "status": "warn",
+      "ms": 560,
+      "error": "GitHub returned 404 for api GET orgs/Unchpokable: {\"message\":\"Not Found\",\"documentation_url\":\"https://docs.github.com/rest/orgs/orgs#get-an-organization\",\"status\":\"404\"}. Check the repository name, ref, path, or pull request number; private repositories need the repo token scope.",
+      "code": "not_found",
+      "details": "{\"message\":\"Not Found\",\"documentation_url\":\"https://docs.github.com/rest/orgs/orgs#get-an-organization\",\"status\":\"404\"}"
+    },
+    {
+      "name": "github_api GET with select",
+      "status": "pass",
+      "ms": 665,
+      "detail": "main"
+    },
+    {
+      "name": "github_api GraphQL query",
+      "status": "pass",
+      "ms": 631,
+      "detail": "Unchpokable"
+    },
+    {
+      "name": "github_api write without allow_write is rejected",
+      "status": "pass",
+      "ms": 0,
+      "detail": "Pass allow_write: true to use a generic API write."
+    },
+    {
+      "name": "github_api delete label",
+      "status": "pass",
+      "ms": 866,
+      "detail": "label deleted"
+    },
+    {
+      "name": "approval request is recorded",
+      "status": "pass",
+      "ms": 0,
+      "detail": "84 requests"
+    },
+    {
+      "name": "approval rejection blocks a write",
+      "status": "pass",
+      "ms": 0,
+      "detail": "rejected write produced no change"
+    },
+    {
+      "name": "destructive gate blocks repo delete when disabled",
+      "status": "pass",
+      "ms": 1014,
+      "detail": "allowDestructive=false blocked apply"
+    },
+    {
+      "name": "admin gate blocks secrets when disabled",
+      "status": "pass",
+      "ms": 971,
+      "detail": "allowAdmin=false blocked secrets_set"
+    },
+    {
+      "name": "generic API write gate when allowGenericApi=read",
+      "status": "pass",
+      "ms": 1001,
+      "detail": "allowGenericApi=read blocked POST"
+    },
+    {
+      "name": "wrong confirm is rejected",
+      "status": "pass",
+      "ms": 0,
+      "detail": "wrong confirm rejected"
+    }
+  ],
+  "notes": [
+    "Repository search returned 4 results; new repositories may not be indexed yet.",
+    "Could not delete Unchpokable/clanker-extract-mw3gaxe7: the gh token lacks the delete_repo scope; the repository was archived instead.",
+    "Could not delete Unchpokable/clanker-plugin-e2e-mw3gaxe7: the gh token lacks the delete_repo scope; the repository was archived instead.",
+    "Local test workspace kept at C:\\Users\\Unchp\\source\\repos\\dsh-github-cli\\.dsh\\e2e-mw3gaxe7."
+  ]
+}

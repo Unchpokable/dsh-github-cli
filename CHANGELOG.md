@@ -1,5 +1,29 @@
 # Changelog
 
+## Unreleased
+
+### Fixed
+
+- Initialize the plugin session before an operation runs. `github_workspace`
+  without an explicit path now uses the session working directory instead of the
+  Host process cwd, and `github_extract` with `destination.create: true` creates
+  a user-owned repository through `user/repos` instead of `orgs/{owner}/repos`.
+- `github_release view/edit/delete` accepts a tag name again: tags resolve through
+  `/releases/tags/{tag}`, while numeric ids keep using `/releases/{id}`.
+- `github_issue transfer` uses the GraphQL `transferIssue` mutation; the REST
+  transfer endpoint returns 404 on github.com.
+- `github_repo edit` returns the new topic list and supports a topics-only edit.
+- REST GET/HEAD requests retry transient 5xx and network failures, and 429 is
+  retried for any method with `Retry-After` respected (capped at 15s). GraphQL
+  queries retry server errors; mutations do not.
+
+### Tests
+
+- Unit suite: 140 tests, including regressions for release tags, GraphQL issue
+  transfer, repository topics, session initialization, and REST retries.
+- Live E2E: 145 pass, 4 expected warnings, 0 fail against
+  `Unchpokable/clanker-playground`.
+
 ## 0.2.0 — development
 
 The first GitHub control-plane milestone. The original seven tools remain

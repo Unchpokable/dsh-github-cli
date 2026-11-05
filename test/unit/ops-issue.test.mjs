@@ -117,3 +117,44 @@ test('github_issue label adds and removes labels', async () => {
   assert.ok(calls.some((call) => call.method === 'POST'));
   assert.ok(calls.some((call) => call.method === 'DELETE'));
 });
+
+test('github_issue transfer uses the GraphQL transferIssue mutation', async () => {
+  const { session } = fakeSession();
+  const calls = [];
+  let graphqlCall = null;
+  const gh = {
+    async apiJson(config, endpoint, options = {}) {
+      calls.push({ endpoint, method: options.method ?? 'GET' });
+      if (endpoint === 'repos/owner/repo/issues/9') return { number: 9, node_id: 'I_issue', title: 'Old' };
+      if (endpoint === 'repos/owner/target') return { node_id: 'R_target', default_branch: 'main' };
+      if (endpoint === 'repos/owner/target/issues/12') {
+        return {
+          number: 12,
+          title: 'Moved issue',
+          state: 'open',
+          html_url: 'https://example.test/target/12',
+          user: { login: 'tester' },
+        };
+      }
+      throw new Error(`unexpected ${endpoint}`);
+    },
+    async graphql(config, query, variables) {
+      graphqlCall = { query, variables };
+      return { transferIssue: { issue: { number: 12, url: 'https://example.test/target/12' } } };
+    },
+  };
+  const value = await runOperation(getOperation('github_issue', 'transfer'), {
+    action: 'transfer', repo: 'owner/repo', issue: '9', new_repo: 'owner/target',
+  }, {
+    config: resolveConfig({}),
+    session,
+    exec: { toolName: 'github_issue', agent: { session: 'test' } },
+    gh,
+  });
+  assert.equal(value.applied, true);
+  assert.equal(value.repo, 'owner/target');
+  assert.equal(value.data.issue.number, 12);
+  assert.match(graphqlCall.query, /transferIssue/);
+  assert.deepEqual(graphqlCall.variables, { issueId: 'I_issue', repositoryId: 'R_target' });
+  assert.ok(!calls.some((call) => call.endpoint.includes('/transfer')));
+});

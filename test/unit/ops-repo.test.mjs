@@ -143,6 +143,34 @@ test('github_repo edit with apply requires allowAdmin', async () => {
   );
 });
 
+test('github_repo edit returns the updated topic list', async () => {
+  const { session, approvals } = fakeSession();
+  const calls = [];
+  const gh = fakeGh((endpoint, options) => {
+    calls.push({ endpoint, method: options.method ?? 'GET' });
+    if (endpoint === 'repos/owner/repo' && (options.method ?? 'GET') === 'GET') {
+      return { full_name: 'owner/repo', name: 'repo', owner: { login: 'owner' }, topics: ['old'] };
+    }
+    if (endpoint === 'repos/owner/repo' && options.method === 'PATCH') {
+      return { full_name: 'owner/repo', name: 'repo', owner: { login: 'owner' }, topics: ['old'] };
+    }
+    if (endpoint === 'repos/owner/repo/topics' && options.method === 'PUT') return {};
+    throw new Error(`unexpected ${options.method ?? 'GET'} ${endpoint}`);
+  });
+  const value = await runOperation(getOperation('github_repo', 'edit'), {
+    action: 'edit', repo: 'owner/repo', topics: ['dsh', 'github'],
+  }, {
+    config: resolveConfig({}),
+    session,
+    exec: { toolName: 'github_repo', agent: { session: 'test' } },
+    gh,
+  });
+  assert.equal(value.applied, true);
+  assert.deepEqual(value.data.repo.topics, ['dsh', 'github']);
+  assert.equal(approvals.length, 1);
+  assert.ok(calls.some((call) => call.endpoint === 'repos/owner/repo/topics' && call.method === 'PUT'));
+});
+
 test('github_repo transfer returns a destructive plan and applies with confirm', async () => {
   const { session, approvals } = fakeSession();
   const calls = [];
