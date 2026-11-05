@@ -39,7 +39,7 @@ DSH-плагин, который читает репозитории и пише
 
 ```sh
 # с GitHub (добавьте #<ветка-или-коммит>, чтобы закрепить ревизию)
-dsh plugin --profile <profile> add github:untodesu/dsh-github-cli
+dsh plugin --profile <profile> add github:extreme-russian-dsh-fandom/dsh-github-cli
 
 # из локального каталога
 dsh plugin --profile <profile> add C:\path\to\dsh-github-cli
@@ -60,7 +60,7 @@ dsh plugin --profile <profile> add C:\path\to\dsh-github-cli
 | Ключ | По умолчанию | Значение |
 | --- | --- | --- |
 | `ghPath` | `""` | Абсолютный путь к исполняемому файлу `gh`. Пусто — искать автоматически. |
-| `defaultRepo` | `""` | Репозиторий, который используется, если в вызове инструмента не указан `repo`, например `untodesu/dsh-github-cli`. |
+| `defaultRepo` | `""` | Репозиторий, который используется, если в вызове инструмента не указан `repo`, например `extreme-russian-dsh-fandom/dsh-github-cli`. |
 | `maxOutputChars` | `80000` | Ограничение на содержимое файла или текст диффа, возвращаемые за один вызов. |
 | `timeoutMs` | `60000` | Таймаут одного вызова `gh`. |
 | `requireApproval` | `true` | Запрашивать подтверждение сессии перед записью в GitHub. |
@@ -70,7 +70,7 @@ dsh plugin --profile <profile> add C:\path\to\dsh-github-cli
 ```yaml
 - id: github-cli
   config:
-    defaultRepo: untodesu/dsh-github-cli
+    defaultRepo: extreme-russian-dsh-fandom/dsh-github-cli
     maxOutputChars: 60000
 ```
 
@@ -115,7 +115,7 @@ dsh plugin --profile <profile> add C:\path\to\dsh-github-cli
 
 ```json
 {
-  "repo": "untodesu/dsh-github-cli",
+  "repo": "extreme-russian-dsh-fandom/dsh-github-cli",
   "title": "Add review support",
   "head": "feature/review",
   "body": "Adds the review flow."
@@ -126,7 +126,7 @@ dsh plugin --profile <profile> add C:\path\to\dsh-github-cli
 
 ```json
 {
-  "repo": "untodesu/dsh-github-cli",
+  "repo": "extreme-russian-dsh-fandom/dsh-github-cli",
   "title": "Review writes need a test pull request",
   "body": "We should exercise the review endpoint end to end.",
   "labels": ["testing"],

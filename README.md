@@ -40,7 +40,7 @@ work. In Desktop, use the Plugin Manager; from a shell:
 
 ```sh
 # from GitHub (append #<branch-or-commit> to pin a revision)
-dsh plugin --profile <profile> add github:untodesu/dsh-github-cli
+dsh plugin --profile <profile> add github:extreme-russian-dsh-fandom/dsh-github-cli
 
 # from a local checkout
 dsh plugin --profile <profile> add C:\path\to\dsh-github-cli
@@ -63,7 +63,7 @@ The row accepts these keys (all optional):
 | Key | Default | Meaning |
 | --- | --- | --- |
 | `ghPath` | `""` | Absolute path to the `gh` executable. Empty means discover it. |
-| `defaultRepo` | `""` | Repository used when a tool call omits `repo`, e.g. `untodesu/dsh-github-cli`. |
+| `defaultRepo` | `""` | Repository used when a tool call omits `repo`, e.g. `extreme-russian-dsh-fandom/dsh-github-cli`. |
 | `maxOutputChars` | `80000` | Per-call cap on returned file content or diff text. |
 | `timeoutMs` | `60000` | Per-`gh`-invocation timeout. |
 | `requireApproval` | `true` | Ask the session's approval channel before writing to GitHub. |
@@ -73,7 +73,7 @@ Override the row in a profile patch layer (the row id is `github-cli`):
 ```yaml
 - id: github-cli
   config:
-    defaultRepo: untodesu/dsh-github-cli
+    defaultRepo: extreme-russian-dsh-fandom/dsh-github-cli
     maxOutputChars: 60000
 ```
 
@@ -116,7 +116,7 @@ Open a pull request:
 
 ```json
 {
-  "repo": "untodesu/dsh-github-cli",
+  "repo": "extreme-russian-dsh-fandom/dsh-github-cli",
   "title": "Add review support",
   "head": "feature/review",
   "body": "Adds the review flow."
@@ -127,7 +127,7 @@ Open an issue:
 
 ```json
 {
-  "repo": "untodesu/dsh-github-cli",
+  "repo": "extreme-russian-dsh-fandom/dsh-github-cli",
   "title": "Review writes need a test pull request",
   "body": "We should exercise the review endpoint end to end.",
   "labels": ["testing"],

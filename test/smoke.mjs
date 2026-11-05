@@ -16,7 +16,7 @@ import { describeIssue, prepareIssue } from '../issue.js';
 
 const config = {
   ghPath: '',
-  defaultRepo: 'untodesu/dsh-github-cli',
+  defaultRepo: 'extreme-russian-dsh-fandom/dsh-github-cli',
   maxOutputChars: 80_000,
   timeoutMs: 60_000,
   requireApproval: true,
